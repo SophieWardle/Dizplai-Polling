@@ -1,0 +1,21 @@
+const pollData = {
+    "pollId": 1,
+    "pollName": "Premier League Winner",
+    "question": "Who will win the Premier League?",
+    "options": [
+        {
+            "optionId": 1,
+            "optionText": "Manchester City"
+        },
+        {
+            "optionId": 2,
+            "optionText": "Arsenal"
+        },
+        {
+            "optionId": 3,
+            "optionText": "Liverpool"
+        }
+    ]
+};
+
+export default pollData;
