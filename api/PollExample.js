@@ -16,6 +16,5 @@ const pollData = {
             "optionText": "Liverpool"
         }
     ]
-};
-
-export default pollData;
+}
+module.exports = pollData;
