@@ -6,12 +6,19 @@ $(document).ready(function() {
 
         poll.options.forEach(function(option) {
             const optionHtml = `
-                <div class="row justify-content-center">
+                <div class="option-button">
                     <button class="btn btn-primary option-btn" data-option-id="${option.option_id}">${option.option_text}</button>
                 </div>
             `;
-            $('#options .row:first').append(optionHtml);
+            $('#options').append(optionHtml);
         });
+
+        const submitButtonHtml = `
+            <div class="submit-button">
+                <button id="submit-btn" class="btn btn-primary">Submit</button>
+            </div>
+        `;
+        $('#options').append(submitButtonHtml);
 
         //Option buttons
         $('.option-btn').click(function() {
@@ -26,6 +33,7 @@ $(document).ready(function() {
                 $.post(`http://localhost:3000/vote/${pollId}/${selectedOptionId}`)
                 .done(function(response) {
                     console.log('Vote submitted successfully');
+                    window.location.href = `vote.html?poll_id=${pollId}`
                 })
                 .fail(function(error) {
                     console.error('Failed to submit vote', error);
