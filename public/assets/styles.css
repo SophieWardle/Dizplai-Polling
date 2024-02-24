@@ -1,0 +1,41 @@
+body {
+    margin: 0 auto;
+    background-image: url('background.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.logo {
+    max-width: 20%;
+    height: auto;
+}
+
+#polls-container {
+    text-align: center;
+    color: white;
+    font-family: "ExtraBold";
+    font-size: large;
+}
+
+#options {
+    margin: 0 auto;
+}
+
+.option-btn.selected {
+    border-color: red;
+}
+@font-face {
+    font-family: "Regular";
+    src: url('../assets/Outfit/static/Outfit-Regular.ttf');
+}
+
+@font-face {
+    font-family: "ExtraBold";
+    src: url('../assets/Outfit/static/Outfit-ExtraBold.ttf');
+}

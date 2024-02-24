@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "express": "^4.18.2",
+    "jquery": "^3.7.1",
     "mysql2": "^3.9.1"
   }
 }
