@@ -2,7 +2,7 @@ $(document).ready(function() {
     $.get('http://localhost:3000/poll', function(data) {
         const poll = data.polls[0];
         const pollId = poll.poll_id;
-        $('#polls-container').append(`<div>${poll.question}</div>`);
+        $('#polls-container').append(`<div class="question">${poll.question}</div>`);
 
         poll.options.forEach(function(option) {
             const optionHtml = `
@@ -15,7 +15,7 @@ $(document).ready(function() {
 
         const submitButtonHtml = `
             <div class="submit-button">
-                <button id="submit-btn" class="btn btn-primary">Submit</button>
+                <button id="submit-btn" class="btn btn-primary submit-btn">SUBMIT</button>
             </div>
         `;
         $('#options').append(submitButtonHtml);

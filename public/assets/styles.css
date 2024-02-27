@@ -1,3 +1,4 @@
+/* Mobile first design */
 body {
     margin: 0 auto;
     background-image: url('background.jpg');
@@ -8,11 +9,11 @@ body {
 
 header {
     text-align: center;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .logo {
-    max-width: 20%;
+    max-width: 30%;
     height: auto;
 }
 
@@ -25,11 +26,108 @@ header {
 
 #options {
     margin: 0 auto;
+    text-align: center;
+    margin-top: 1.5vw;
+}
+
+.option-btn,
+.submit-btn {
+    padding: 15px 60px;
+    font-size: 25px;
+    width: 100%;
+    font-family: 'Regular';
+}
+
+.submit-btn {
+    background-color: white;
+    color: #986bf9;
+    border-color: #8C8C8C;
+}
+
+.option-btn {
+    background-color: #986bf972;
+    border-color: #fff;
+    opacity: 0.9;
+    color: #ffff;
+}
+
+.submit-button {
+    width: 100%;
+}
+
+.question {
+    white-space: pre-line;
+    max-width: 100%;
+    word-wrap: break-word;
+    display: inline-block;
+    font-size: 30px;
+    margin-bottom: 2.5vh;
 }
 
 .option-btn.selected {
-    border-color: red;
+    border-color: black;
+    background-color: white;
+    color: #986bf9;
 }
+
+.option-button {
+    margin-bottom: 10vw;
+}
+
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#vote-container {
+    text-align: center;
+    color: white;
+    font-family: "ExtraBold";
+    font-size: large;
+}
+
+.option-btn:hover {
+    border-color: black;
+    background-color: white;
+    color: #986bf9;
+}
+
+
+/* Screens larger than mobile */
+@media screen and (min-width: 768px) {
+    header {
+        padding: 30px 0;
+    }
+
+    .submit-btn,
+    .option-btn {
+        width: 45vw;
+    }
+
+    .logo {
+        max-width: 10vw;
+        height: auto;
+    }
+
+    .option-button {
+        margin-bottom: 2vw;
+    }
+
+    .submit-button {
+        margin-bottom: 2vw;
+    }
+
+    .question {
+        white-space: pre-line;
+        max-width: 30vw;
+        word-wrap: break-word;
+        display: inline-block;
+        font-size: 2.5vw;
+    }
+}
+
+
 @font-face {
     font-family: "Regular";
     src: url('../assets/Outfit/static/Outfit-Regular.ttf');
