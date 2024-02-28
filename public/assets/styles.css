@@ -80,18 +80,77 @@ header {
     align-items: center;
 }
 
-#vote-container {
-    text-align: center;
-    color: white;
-    font-family: "ExtraBold";
-    font-size: large;
-}
 
 .option-btn:hover {
     border-color: black;
     background-color: white;
     color: #986bf9;
 }
+
+/* Confirmation page */
+
+#vote-container {
+    text-align: center;
+    color: white;
+    font-family: "ExtraBold";
+    white-space: pre-line;
+    max-width: 100%;
+    word-wrap: break-word;
+    display: inline-block;
+    font-size: 35px;
+    margin-bottom: 10vh;
+}
+.option-box {
+    padding: 15px 80px;
+    font-size: 25px;
+    width: 100%;
+    font-family: 'Regular';
+    background-color: #986bf972;
+    border: 2px solid #fff;
+    opacity: 0.9;
+    color: #ffff;
+    border-radius: 5px;
+    color: #ffff;
+    margin-bottom: 5vh;
+    position: relative;
+}
+
+.progress-bar {
+    position: relative; /* Add relative positioning */
+    display: flex;
+    align-items: center;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.filled {
+    height: 100%;
+    background-color: #996BF9;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.option-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.percentage {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
 
 
 /* Screens larger than mobile */
@@ -106,7 +165,7 @@ header {
     }
 
     .logo {
-        max-width: 10vw;
+        max-width: 12vw;
         height: auto;
     }
 
@@ -125,6 +184,69 @@ header {
         display: inline-block;
         font-size: 2.5vw;
     }
+
+    /*Confirmation Page*/
+    #vote-container {
+    text-align: center;
+    color: white;
+    font-family: "ExtraBold";
+    white-space: pre-line;
+    max-width: 40vw;
+    word-wrap: break-word;
+    display: inline-block;
+    font-size: 35px;
+    margin-bottom: 10vh;
+}
+.option-box {
+    padding: 15px 80px;
+    font-size: 25px;
+    width: 30vw;
+    font-family: 'Regular';
+    background-color: #986bf972;
+    border: 2px solid #fff;
+    opacity: 0.9;
+    color: #ffff;
+    border-radius: 5px;
+    color: #ffff;
+    margin-bottom: 5vh;
+    position: relative;
+}
+
+.progress-bar {
+    position: relative; /* Add relative positioning */
+    display: flex;
+    align-items: center;
+    height: 30px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.filled {
+    height: 100%;
+    background-color: #996BF9;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.option-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.percentage {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
 }
 
 
