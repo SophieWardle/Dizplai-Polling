@@ -22,6 +22,7 @@ $(document).ready(function() {
 
         //Option buttons
         $('.option-btn').click(function() {
+            $('#error-message').text('');
             $('.option-btn').removeClass('selected');
             $(this).addClass('selected');
         });
@@ -29,6 +30,13 @@ $(document).ready(function() {
         //Submit button
         $('#submit-btn').click(function(){
             const selectedOptionId = $('.option-btn.selected').data('option-id');
+            if ($('.option-btn.selected').length === 0) {
+                $('#error-message').text('Please select an option before submitting.');
+                return;
+            }
+
+            $('#error-message').text('');
+
             if (selectedOptionId) {
                 $.post(`http://localhost:3000/vote/${pollId}/${selectedOptionId}`)
                 .done(function(response) {

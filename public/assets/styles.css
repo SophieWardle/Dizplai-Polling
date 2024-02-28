@@ -87,6 +87,13 @@ header {
     color: #986bf9;
 }
 
+#error-message {
+    text-align: center;
+    color: #ffff;
+    font-style: 'Regular';
+    font-size: 20px;
+}
+
 /* Confirmation page */
 
 #vote-container {
