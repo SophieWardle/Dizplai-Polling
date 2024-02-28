@@ -6,6 +6,8 @@ $(document).ready(function () {
 
         $('.results-container').empty();
 
+        data.voteCounts.sort((a, b) => b.voteCount - a.voteCount);
+
         const totalVoteCount = data.totalVoteCount;
         data.voteCounts.forEach(function (option) {
             const percentage = Math.round((option.voteCount / totalVoteCount) * 100);
