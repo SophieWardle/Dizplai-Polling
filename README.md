@@ -22,12 +22,12 @@ I created a database and used the example poll as poll table data. Votes are sto
 
 The credentials for the database are in `db.js` within the root project folder.
 
-These can be configured to match your database setup, the default is:
+These can be configured to match your database setup, the default for the database is:
 
-Host: localhost
-User: root
-Password:
-Database: dizplai-voting
+- Host: localhost
+- User: root
+- Password:
+- Database: dizplai-voting
 
 ## Running the Project
 
@@ -42,22 +42,23 @@ XAMPP services must still be running to work.
 **For web app:**
 In your browser URL: http://localhost:3000/index.html
 
-Takes you to the homepage where it gets the poll to vote on.
-You must select an option in order to submit.
-Only one option can be selected at a time, and the selected option is highlighted.
-Once submitted, you are shown the percentage of votes for each option.
-Clicking the Dizplai logo on the confirmation page will take you back to index.
+- Takes you to the homepage where it gets the poll to vote on.
+- You must select an option in order to submit.
+- Only one option can be selected at a time, and the selected option is highlighted.
+- Once submitted, you are shown the percentage of votes for each option.
+- Clicking the Dizplai logo on the confirmation page will take you back to index.
 
 **For API**
 
 I have exported and added my collection from Postman for testing the API.
-The json file is called `Dizplai-Voting.postman_collection.json` which can be imported into Postman by going into 'File' and clicking 'Import'
+- The json file is called `Dizplai-Voting.postman_collection.json` 
+- which can be imported into Postman by going into 'File' and clicking 'Import'
 
 In Postman, the API can be tested through the following endpoints:
 
-Retrieving the Poll
+**Retrieving the Poll**
 GET `http://localhost:3000/poll`
-No parameters, just a simple get request.
+- No parameters, just a simple get request.
 Response:
 "code": 200,
     "polls": [
@@ -82,16 +83,16 @@ Response:
         }
     ]
 
-Posting a New Vote
+**Posting a New Vote**
 POST `http://localhost:3000/vote/poll_id/option_id`
-Replacing poll_id and option_id with the actual ID's for URL parameters.
-Specifying which poll and which option user is voting for.
-There is only 1 poll with 3 options so /1/1 - /1/3, but it should give appropriate error messages when wrong.
+- Replacing poll_id and option_id with the actual ID's for URL parameters.
+- Specifying which poll and which option user is voting for.
+- There is only 1 poll with 3 options so /1/1 - /1/3, but it should give appropriate error messages when wrong.
 
-Get Poll by ID
+**Get Poll by ID**
 GET `http://localhost:3000/poll/poll_id`
-Replacing poll_id with the actual ID for URL parameter.
-There is only one poll so /poll/1, but should give appropriate error messages when wrong.
+- Replacing poll_id with the actual ID for URL parameter.
+- There is only one poll so /poll/1, but should give appropriate error messages when wrong.
 
 ## Downloads 
 
