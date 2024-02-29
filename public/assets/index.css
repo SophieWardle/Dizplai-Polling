@@ -1,0 +1,147 @@
+/* Mobile first design */
+body {
+    margin: 0 auto;
+    background-image: url('background.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.logo {
+    max-width: 30%;
+    height: auto;
+}
+
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#polls-container {
+    text-align: center;
+    color: white;
+    font-family: "ExtraBold";
+}
+
+.question {
+    white-space: pre-line;
+    max-width: 100%;
+    word-wrap: break-word;
+    display: inline-block;
+    font-size: 2.5em;
+    margin-bottom: 2vh;
+}
+
+#options {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 3vw;
+}
+
+.option-btn,
+.submit-btn {
+    padding: 20px 60px;
+    font-size: 2em;
+    width: 100%;
+    font-family: 'Regular';
+}
+
+.submit-btn {
+    background-color: white;
+    color: #986bf9;
+    border-color: #8C8C8C;
+}
+
+.option-btn {
+    background-color: #986bf972;
+    border-color: #fff;
+    opacity: 0.9;
+    color: #ffff;
+}
+
+.submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.option-btn.selected {
+    border-color: black;
+    background-color: white;
+    color: #986bf9;
+}
+
+.option-button {
+    margin-bottom: 10vw;
+}
+
+
+.option-btn:hover {
+    border-color: black;
+    background-color: white;
+    color: #986bf9;
+}
+
+#error-message {
+    text-align: center;
+    color: #ffff;
+    font-style: 'Regular';
+    font-size: 2em;
+    padding-top: 1.5vh;
+}
+
+/* Screens larger than mobile */
+@media screen and (min-width: 768px) {
+    header {
+        padding-top: 3vh;
+    }
+
+    .option-btn,
+    .submit-btn {
+        padding: 20px 60px;
+        font-size: 2em;
+        width: 45vw;
+    }
+
+    .logo {
+        max-width: 15vw;
+        height: auto;
+    }
+
+    .option-button {
+        margin-bottom: 2vw;
+    }
+
+    .submit-button {
+        margin-bottom: 2vw;
+    }
+
+    .question {
+        white-space: pre-line;
+        max-width: 35vw;
+        word-wrap: break-word;
+        display: inline-block;
+        font-size: 3em;
+    }
+}
+
+
+@font-face {
+    font-family: "Regular";
+    src: url('../assets/Outfit/static/Outfit-Regular.ttf');
+}
+
+@font-face {
+    font-family: "ExtraBold";
+    src: url('../assets/Outfit/static/Outfit-ExtraBold.ttf');
+}

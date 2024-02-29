@@ -1,15 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const pollData = require('../PollExample');
 const connection = require('../../db');
 
+// GET all polls
 router.get('/', (req, res) => {
+    // SQL Query to fetch poll data from db
     const query = `
         SELECT polls.poll_id, polls.poll_name, polls.question,
             options.option_id, options.option_text
         FROM polls
         JOIN options ON polls.poll_id = options.poll_id
         `;
+    
     connection.query(query, (error, results) => {
         if (error) {
             console.error('Error fetching polls from database', error);
@@ -26,7 +28,7 @@ router.get('/', (req, res) => {
             });
         }
 
-        //format polls
+        // Format poll data into nested structure
         const polls = {};
         results.forEach(row => {
             if (!polls[row.poll_id]) {
@@ -45,6 +47,7 @@ router.get('/', (req, res) => {
 
         const pollArray = Object.values(polls);
 
+        // Send formatted poll data as JSON response
         res.status(200).json({
             code: 200,
             polls: pollArray,
@@ -52,10 +55,13 @@ router.get('/', (req, res) => {
     });
 });
 
+
+// GET a poll by ID
 router.get('/:poll_id', (req, res) => {
     try {
         const { poll_id } = req.params;
 
+        // Check if the poll exists
         pollExists(poll_id, (pollError, pollExists) => {
             if (pollError) {
                 return res.status(500).json({
@@ -71,6 +77,7 @@ router.get('/:poll_id', (req, res) => {
                 });
             }
 
+            // SQL Query to select vote count for each option of the poll
             const query = `
                 SELECT 
                     p.poll_name,
@@ -90,6 +97,7 @@ router.get('/:poll_id', (req, res) => {
                 `;
             const values = [poll_id];
 
+            // Execute SQL query
             connection.query(query, values, (error, results) => {
                 if (error) {
                     console.error('Error fetching vote count from database', error);
@@ -100,6 +108,8 @@ router.get('/:poll_id', (req, res) => {
                 }
 
                 let totalVoteCount = 0;
+
+                // Iterate over results, calculate total & format response
                 const voteCounts = results.map(row => {
                     if (row.option_id !== null) {
                         totalVoteCount += row.voteCount;
@@ -111,6 +121,7 @@ router.get('/:poll_id', (req, res) => {
                     }
                 });
 
+                // Send formatted poll data as JSON response
                 res.status(200).json({
                     code: 200,
                     poll_name: results.length > 0 ? results[0].poll_name : null,
@@ -128,7 +139,7 @@ router.get('/:poll_id', (req, res) => {
     }
 });
 
-//Check if poll with ID exists
+// Check if poll with ID exists in database
 function pollExists(poll_id, callback) {
     const pollQuery = 'SELECT poll_name FROM polls WHERE poll_id = ?';
     connection.query(pollQuery, [poll_id], (error, results) => {

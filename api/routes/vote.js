@@ -2,10 +2,12 @@ const express = require('express');
 const router = express.Router();
 const connection = require('../../db');
 
+// POST request to submit a vote on a poll
 router.post('/:poll_id/:option_id', (req, res) => {
     try {
         const { poll_id, option_id } = req.params;
 
+        // Check if poll with requested ID exists in database
         pollExists(poll_id, (pollError, pollExists) => {
             if (pollError) {
                 return res.status(500).json({
@@ -21,6 +23,7 @@ router.post('/:poll_id/:option_id', (req, res) => {
                 });
             }
         
+            // Get the count of options available for requested poll
         getOptionCount(poll_id, (optionCountError, optionCount) => {
             if (optionCountError) {
                 return res.status(500).json({
@@ -29,6 +32,8 @@ router.post('/:poll_id/:option_id', (req, res) => {
                 });
             }
 
+            // Check if option_id provided in the request
+            // is within valid range
             if (option_id > optionCount) {
                 return res.status(400).json({
                     code: 400,
@@ -36,6 +41,7 @@ router.post('/:poll_id/:option_id', (req, res) => {
                 });
             }
 
+            // Check if the option_id is between 1 - 5 
             if (!isValidOption(option_id)) {
                 return res.status(400).json({
                     code: 400,
@@ -43,10 +49,9 @@ router.post('/:poll_id/:option_id', (req, res) => {
                 });
             }
 
+            // Construct and execute SQL query to insert into vote into database
             const query = `INSERT INTO votes (poll_id, option_id) VALUES (?, ?)`;
             const values = [poll_id, option_id];
-
-            console.log('Executing Query:', query, 'with values:', values);
 
             connection.query(query, values, (error, results) => {
                 if (error) {
@@ -56,6 +61,8 @@ router.post('/:poll_id/:option_id', (req, res) => {
                         message: 'Internal Server Error',
                     });
                 }
+
+                // Return success message
                 res.status(201).json({
                     code: 201,
                     message: 'Vote successful!'

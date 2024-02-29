@@ -1,6 +1,6 @@
 const mysql = require('mysql2');
 
-// Create a MySQL connection
+// Create database configuration
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -8,6 +8,7 @@ const connection = mysql.createConnection({
     database: 'dizplai-voting',
   });
   
+  //Connect to the database
   connection.connect((err) => {
     if (err) {
       console.error('Error connecting to MySQL:', err);
