@@ -38,7 +38,7 @@ $(function () {
                 $.post(`http://localhost:3000/vote/${pollId}/${selectedOptionId}`)
                     .done(function (response) {
                         console.log('Vote submitted successfully');
-                        window.location.href = `vote.html?poll_id=${pollId}`
+                        window.location.href = `confirmation.html?poll_id=${pollId}`
                     })
                     .fail(function (error) {
                         console.error('Failed to submit vote', error);
