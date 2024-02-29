@@ -37,24 +37,57 @@ Database: dizplai-voting
 2. Navigate into the API folder: `cd api`
 3. Start app.js: `node app.js`
 
-# For web app:
+XAMPP services must still be running to work.
+
+**For web app:**
 In your browser URL: http://localhost:3000/index.html
 
-# For API
+Takes you to the homepage where it gets the poll to vote on.
+You must select an option in order to submit.
+Only one option can be selected at a time, and the selected option is highlighted.
+Once submitted, you are shown the percentage of votes for each option.
+Clicking the Dizplai logo on the confirmation page will take you back to index.
+
+**For API**
 
 In Postman, the API can be tested through the following URLS:
 
-Get Request For Retrieving the Poll
+Retrieving the Poll
 GET `http://localhost:3000/poll`
+No parameters, just a simple get request.
+Response:
+"code": 200,
+    "polls": [
+        {
+            "poll_id": 1,
+            "poll_name": "Premier League Winner",
+            "question": "Who will win the Premier League?",
+            "options": [
+                {
+                    "option_id": 1,
+                    "option_text": "Manchester City"
+                },
+                {
+                    "option_id": 2,
+                    "option_text": "Arsenal"
+                },
+                {
+                    "option_id": 3,
+                    "option_text": "Liverpool"
+                }
+            ]
+        }
+    ]
 
 Posting a New Vote
 POST `http://localhost:3000/vote/poll_id/option_id`
-Replacing poll_id and option_id with the actual ID's
+Replacing poll_id and option_id with the actual ID's for URL parameters.
+Specifying which poll and which option user is voting for.
 There is only 1 poll with 3 options so /1/1 - /1/3, but it should give appropriate error messages when wrong.
 
 Get Poll by ID
 GET `http://localhost:3000/poll/poll_id`
-Replacing poll_id with the actual ID.
+Replacing poll_id with the actual ID for URL parameter.
 There is only one poll so /poll/1, but should give appropriate error messages when wrong.
 
 ## Downloads 
