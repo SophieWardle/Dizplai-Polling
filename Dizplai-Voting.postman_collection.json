@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "b2a280ba-65c3-4408-b13b-ad8fd217bbaa",
+		"name": "Dizplai-Voting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24235304"
+	},
+	"item": [
+		{
+			"name": "Get Poll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/poll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"poll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a vote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/vote/1/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vote",
+						"1",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET poll by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/poll/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"poll",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

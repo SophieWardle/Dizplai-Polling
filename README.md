@@ -50,6 +50,9 @@ Clicking the Dizplai logo on the confirmation page will take you back to index.
 
 **For API**
 
+I have exported and added my collection from Postman for testing the API.
+The json file is called `Dizplai-Voting.postman_collection.json` which can be imported into Postman by going into 'File' and clicking 'Import'
+
 In Postman, the API can be tested through the following URLS:
 
 Retrieving the Poll
