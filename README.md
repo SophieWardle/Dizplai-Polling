@@ -59,7 +59,7 @@ In Postman, the API can be tested through the following endpoints:
 **Retrieving the Poll**
 GET `http://localhost:3000/poll`
 - No parameters, just a simple get request.
-Response:
+- Response:
 "code": 200,
     "polls": [
         {
