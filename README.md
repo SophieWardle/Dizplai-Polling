@@ -31,6 +31,8 @@ Database: dizplai-voting
 
 ## Running the Project
 
+![Command line running project](running.png)
+
 1. Navigate to project directory in the terminal: `cd Dizplai-Polling`
 2. Navigate into the API folder: `cd api`
 3. Start app.js: `node app.js`
