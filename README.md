@@ -14,7 +14,7 @@ I created a database and used the example poll as poll table data. Votes are sto
 
 ## Database Setup
 
-1. In XAMPP Control Panel, start the Apache and MySQL services
+1. In XAMPP Control Panel, start the MySQL services
 2. On the MySQL row, click "Admin", or navigate to `http://localhost/phpmyadmin/index.php`
 3. Import the SQL script into your MySQL // Run the SQL script. SQL script in `api/dizplai-voting.sql`
 
@@ -97,6 +97,14 @@ GET `http://localhost:3000/poll/poll_id`
 ## Downloads 
 
 1. [Postman] for API testing
-2. [XAMPP] for MySQL, Apache, PHPMyAdmin
+2. [XAMPP] for MySQL, PHPMyAdmin
 
 Dependencies: Node.js and Node Package Manager if not already installed
+
+## Notes & Reflection
+
+- Since the mechanism to create a poll & store it to a db already exists, I did not feel the need to implement it into the API. Only the example poll on the Premier League has been used.
+- I tested the backend with Postman and for the frontend I used things like:
+  - Console logging for correct/ expected data
+  - Browser developer tools to check responsiveness
+  - Purposely failing, like not selecting an option before submitting to check the response
