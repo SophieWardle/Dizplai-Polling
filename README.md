@@ -34,6 +34,7 @@ These can be configured to match your database setup, the default for the databa
 ![Command line running project](running.png)
 
 1. Navigate to project directory in the terminal: `cd Dizplai-Polling`
+- (it might be `cd Dizplai-Polling-main` depending on how it is saved)
 2. Navigate into the API folder: `cd api`
 3. Start app.js: `node app.js`
 
@@ -108,3 +109,4 @@ Dependencies: Node.js and Node Package Manager if not already installed
   - Console logging for correct/ expected data
   - Browser developer tools to check responsiveness
   - Purposely failing, like not selecting an option before submitting to check the response
+- Used Node.js express server for the api, not just because it was recommended but I am familiar with it and because its easy to integrate libraries and tools (npm)
